@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Profesor;
 use Illuminate\Http\Request;
 
-class ProfesorController extends Controller
+class GrupoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,11 +12,8 @@ class ProfesorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        $profe =Profesor::all();
-        return view('profesor.show', compact('profe'));
-
-
+    {
+        //
     }
 
     /**
@@ -27,7 +23,7 @@ class ProfesorController extends Controller
      */
     public function create()
     {
-        return view('profesor.create');
+        //
     }
 
     /**
@@ -38,10 +34,7 @@ class ProfesorController extends Controller
      */
     public function store(Request $request)
     {
-        $profesor =  new Profesor();
-        $profesor-> nombre= $request-> nombre;
-        $profesor->save();
-        return "profesor registrado";
+        //
     }
 
     /**
@@ -52,8 +45,7 @@ class ProfesorController extends Controller
      */
     public function show($id)
     {
-        $profesores=Profesor::find($id);
-        return view('profesor.show', compact('profesores'));
+        //
     }
 
     /**
@@ -62,10 +54,9 @@ class ProfesorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profesor $profesor)
+    public function edit($id)
     {
-        $profesor =Profesor::find($profesor);
-        return view('profesor.edit', compact('profesor'));
+        //
     }
 
     /**
@@ -77,8 +68,7 @@ class ProfesorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $profesor= Profesor::findOrFail($id);
-        $profesor->descripcion = $request->descripcion;
+        //
     }
 
     /**
@@ -87,19 +77,8 @@ class ProfesorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
-    public function profe_delete($id)
-    {
-        //
-        $profesor =Profesor::findOrfail($id);
-        $profesor->delete;
-        return "profesor eliminado";
-
-    }
     public function destroy($id)
     {
-        $profesor= Profesor::find($id);
-        $profesor->delete();
-        return redirect()-> route('index');
+        //
     }
 }

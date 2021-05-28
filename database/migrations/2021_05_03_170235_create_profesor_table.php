@@ -11,12 +11,13 @@ class CreateProfesorTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() 
     {
         Schema::create('profesor', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('contrasena');
+            $table->string('materia');
             $table->timestamps();
         });
     }
