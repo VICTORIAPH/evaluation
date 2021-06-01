@@ -24,7 +24,8 @@ Route::get('/', function () {
 }); 
 
 Route::get('/evaluacion', [EvaluacionController::class, 'index']);
-Route::get('/realizar/evaluacion', [EvaluacionController::class, 'create']);
+Route::get('/realizar/evaluacion', [EvaluacionController::class, 'create'])->name('realizar');
+Route::get('/realizar/evaluacion/registrarse', [EvaluacionController::class, 'registrarse'])->name('registrarse');
 Route::get('/evaluacion/iniciar/sesion', [EvaluacionController::class, 'iniciar'])->name('iniciar');
 Route::get('/evaluacion/show', [ProfesorController::class, 'show'])->name('show');
 Route::get('/evaluacion/destroy', [ProfesorController::class, 'destroy'])->name('destroy');

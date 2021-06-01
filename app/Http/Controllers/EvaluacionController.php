@@ -92,4 +92,10 @@ class EvaluacionController extends Controller
         return view('evaluacion.iniciar', compact('evaluacion'));
 
     }
+    public function registrarse()
+    {
+        $evaluacion =Evaluacion::all();
+        return view('evaluacion.registrarse', compact('evaluacion'));
+
+    }
 }

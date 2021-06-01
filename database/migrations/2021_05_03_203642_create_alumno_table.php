@@ -15,8 +15,10 @@ class CreateAlumnoTable extends Migration
     {
         Schema::create('alumno', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
-            $table->string('contrasena');
+            $table->string('email');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

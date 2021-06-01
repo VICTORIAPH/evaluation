@@ -15,9 +15,10 @@ class CreateProfesorTable extends Migration
     {
         Schema::create('profesor', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
-            $table->string('contrasena');
             $table->string('materia');
+            $table->bigInteger('users_id')->unsigned();
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
